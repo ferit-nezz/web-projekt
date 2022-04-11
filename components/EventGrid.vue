@@ -1,26 +1,29 @@
 <template>
-  <div>
-    <v-card class="mx-auto" max-width="344">
-      <v-img
-        src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg"
-        height="200px"
-      ></v-img>
+  <div class="bg-gray-200 flex justify-center py-8">
+    <div class="max-w-6xl grid lg:grid-cols-2 gap-8">
+      <v-card v-for="i in 10" :key="i" class="mx-auto" max-width="500">
+        <v-img
+          src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg"
+          height="200px"
+        ></v-img>
 
-      <v-card-title> Top western road trips </v-card-title>
+        <v-card-title> Top western road trips </v-card-title>
 
-      <v-card-subtitle> 1,000 miles of wonder </v-card-subtitle>
+        <v-card-subtitle> 1,000 miles of wonder </v-card-subtitle>
 
-      <v-card-actions>
-        <v-btn color="orange lighten-2" text> Explore </v-btn>
+        <v-card-actions>
+          <v-btn color="orange lighten-2" text nuxt to="events/3">
+            Explore
+          </v-btn>
 
-        <v-spacer></v-spacer>
+          <v-spacer></v-spacer>
 
-        <!-- <v-btn icon @click="show = !show">
+          <!-- <v-btn icon @click="show = !show">
           <v-icon>{{ show ? "mdi-chevron-up" : "mdi-chevron-down" }}</v-icon>
         </v-btn> -->
-      </v-card-actions>
+        </v-card-actions>
 
-      <!--  <v-expand-transition>
+        <!--  <v-expand-transition>
         <div v-show="show">
           <v-divider></v-divider>
 
@@ -33,7 +36,8 @@
           </v-card-text>
         </div>
       </v-expand-transition> -->
-    </v-card>
+      </v-card>
+    </div>
   </div>
 </template>
 
