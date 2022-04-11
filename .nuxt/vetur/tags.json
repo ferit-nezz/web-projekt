@@ -1,5 +1,8 @@
 {
   "Navbar": {
     "description": "Auto imported from components/Navbar.vue"
+  },
+  "NewEvent": {
+    "description": "Auto imported from components/NewEvent.vue"
   }
 }

@@ -1,6 +1,7 @@
 <template>
   <div>
-    <NewEvent />
+    <h4>Add new event</h4>
+    <v-icon>mdi-logout</v-icon>
   </div>
 </template>
 
