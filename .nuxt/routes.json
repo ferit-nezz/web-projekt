@@ -1,8 +1,14 @@
 [
   {
+    "name": "events",
+    "path": "/events",
+    "component": "/Users/blekso/Desktop/Projects/web-projekt/pages/events/index.vue",
+    "chunkName": "pages/events/index"
+  },
+  {
     "name": "index",
     "path": "/",
-    "component": "C:\\\\Users\\\\student\\\\desktop\\\\lv1web\\\\web-vue-project\\\\pages\\\\index.vue",
+    "component": "/Users/blekso/Desktop/Projects/web-projekt/pages/index.vue",
     "chunkName": "pages/index"
   }
 ]
