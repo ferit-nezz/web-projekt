@@ -1,14 +1,37 @@
 [
   {
+    "name": "about",
+    "path": "/about",
+    "component": "/Users/blekso/Desktop/Projects/web-projekt/pages/about/index.vue",
+    "chunkName": "pages/about/index",
+    "_name": "_6f6e7f72"
+  },
+  {
     "name": "events",
     "path": "/events",
     "component": "/Users/blekso/Desktop/Projects/web-projekt/pages/events/index.vue",
-    "chunkName": "pages/events/index"
+    "chunkName": "pages/events/index",
+    "_name": "_ffa59216"
+  },
+  {
+    "name": "events-create",
+    "path": "/events/create",
+    "component": "/Users/blekso/Desktop/Projects/web-projekt/pages/events/create.vue",
+    "chunkName": "pages/events/create",
+    "_name": "_a5a41b2e"
+  },
+  {
+    "name": "events-slug",
+    "path": "/events/:slug",
+    "component": "/Users/blekso/Desktop/Projects/web-projekt/pages/events/_slug.vue",
+    "chunkName": "pages/events/_slug",
+    "_name": "_7e7695ad"
   },
   {
     "name": "index",
     "path": "/",
     "component": "/Users/blekso/Desktop/Projects/web-projekt/pages/index.vue",
-    "chunkName": "pages/index"
+    "chunkName": "pages/index",
+    "_name": "_0d43b789"
   }
 ]

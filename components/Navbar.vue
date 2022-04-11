@@ -1,10 +1,15 @@
 <template>
   <div class="bg-black text-white h-16">
     <div class="w-full h-full flex justify-between items-center px-4">
-      <p class="text-3xl" style="margin-bottom: 0px !important">Eventy</p>
+      <nuxt-link to="/">
+        <p class="text-3xl text-white" style="margin-bottom: 0px !important">
+          Eventy
+        </p></nuxt-link
+      >
+
       <div class="grid grid-cols-3 gap-8">
-        <v-btn plain color="white"> Events </v-btn>
-        <v-btn plain color="white"> About </v-btn>
+        <v-btn plain color="white" to="/events"> Events </v-btn>
+        <v-btn plain color="white" to="/about"> About </v-btn>
         <v-btn depressed> Log in </v-btn>
       </div>
     </div>

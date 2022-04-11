@@ -2,6 +2,9 @@
   "EventGrid": {
     "description": "Auto imported from components/EventGrid.vue"
   },
+  "Hero": {
+    "description": "Auto imported from components/Hero.vue"
+  },
   "Navbar": {
     "description": "Auto imported from components/Navbar.vue"
   },

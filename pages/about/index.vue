@@ -1,7 +1,5 @@
 <template>
-  <div>
-    <Hero variant="small" />
-  </div>
+  <div>about page</div>
 </template>
 
 <script>
