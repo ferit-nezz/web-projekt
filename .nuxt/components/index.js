@@ -1,3 +1,4 @@
+export { default as EventGrid } from '../../components/EventGrid.vue'
 export { default as Navbar } from '../../components/Navbar.vue'
 export { default as NewEvent } from '../../components/NewEvent.vue'
 

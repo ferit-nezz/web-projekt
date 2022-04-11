@@ -1,4 +1,7 @@
 {
+  "EventGrid": {
+    "description": "Auto imported from components/EventGrid.vue"
+  },
   "Navbar": {
     "description": "Auto imported from components/Navbar.vue"
   },

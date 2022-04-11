@@ -1,6 +1,7 @@
 <template>
   <div>
     <NewEvent />
+    <EventGrid />
   </div>
 </template>
 
