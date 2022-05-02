@@ -17,7 +17,7 @@
           <div
             class="w-full lg:w-7/12 bg-white p-5 rounded-r-lg flex flex-col items-center justify-center"
           >
-            <h3 class="pt-4 text-2xl text-center">JOIN EVENTY</h3>
+            <h3 class="pt-4 text-4xl text-center font-bold">JOIN EVENTY</h3>
             <div class="container mx-auto">
               <div class="grid m-4">
                 <ValidationObserver ref="observer" v-slot="{ invalid }">
@@ -55,7 +55,6 @@
                     >
                       <v-text-field
                         v-model="password"
-                        :counter="7"
                         :error-messages="errors"
                         label="Password"
                         required
