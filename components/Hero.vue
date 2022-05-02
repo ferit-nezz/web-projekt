@@ -8,13 +8,14 @@
       :class="{ 'h-96': variant == 'main', 'h-64': variant == 'small' }"
       src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg"
     ></v-img>
-    <p class="z-20 absolute text-white text-3xl">event name</p>
+    <p class="z-20 absolute text-white text-3xl">{{ title }}</p>
   </div>
 </template>
 
 <script>
 export default {
   props: {
+    title: String,
     variant: {
       type: String,
       default: "main",

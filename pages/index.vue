@@ -1,6 +1,8 @@
 <template>
   <div>
-    <Hero />
+    <Hero title="Eventy" />
+    <TextThreeCol />
+    <TextTwoCol />
     <TextImageLeft />
     <TextImageRight />
     <Footer />
