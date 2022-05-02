@@ -6,6 +6,8 @@ import scrollBehavior from './router.scrollBehavior.js'
 
 const _6f6e7f72 = () => interopDefault(import('../pages/about/index.vue' /* webpackChunkName: "pages/about/index" */))
 const _ffa59216 = () => interopDefault(import('../pages/events/index.vue' /* webpackChunkName: "pages/events/index" */))
+const _5b7a4440 = () => interopDefault(import('../pages/auth/signin.vue' /* webpackChunkName: "pages/auth/signin" */))
+const _324d9754 = () => interopDefault(import('../pages/auth/signup.vue' /* webpackChunkName: "pages/auth/signup" */))
 const _a5a41b2e = () => interopDefault(import('../pages/events/create.vue' /* webpackChunkName: "pages/events/create" */))
 const _7e7695ad = () => interopDefault(import('../pages/events/_slug.vue' /* webpackChunkName: "pages/events/_slug" */))
 const _0d43b789 = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
@@ -29,6 +31,14 @@ export const routerOptions = {
     path: "/events",
     component: _ffa59216,
     name: "events"
+  }, {
+    path: "/auth/signin",
+    component: _5b7a4440,
+    name: "auth-signin"
+  }, {
+    path: "/auth/signup",
+    component: _324d9754,
+    name: "auth-signup"
   }, {
     path: "/events/create",
     component: _a5a41b2e,

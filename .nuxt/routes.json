@@ -14,6 +14,20 @@
     "_name": "_ffa59216"
   },
   {
+    "name": "auth-signin",
+    "path": "/auth/signin",
+    "component": "/Users/blekso/Desktop/Projects/web-projekt/pages/auth/signin.vue",
+    "chunkName": "pages/auth/signin",
+    "_name": "_5b7a4440"
+  },
+  {
+    "name": "auth-signup",
+    "path": "/auth/signup",
+    "component": "/Users/blekso/Desktop/Projects/web-projekt/pages/auth/signup.vue",
+    "chunkName": "pages/auth/signup",
+    "_name": "_324d9754"
+  },
+  {
     "name": "events-create",
     "path": "/events/create",
     "component": "/Users/blekso/Desktop/Projects/web-projekt/pages/events/create.vue",

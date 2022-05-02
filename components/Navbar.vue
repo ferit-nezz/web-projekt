@@ -10,7 +10,7 @@
       <div class="grid grid-cols-3 gap-8">
         <v-btn plain color="white" to="/events"> Events </v-btn>
         <v-btn plain color="white" to="/about"> About </v-btn>
-        <v-btn depressed> Log in </v-btn>
+        <v-btn depressed to="/auth/signin"> Log in </v-btn>
       </div>
     </div>
   </div>
