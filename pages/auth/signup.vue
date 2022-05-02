@@ -9,12 +9,15 @@
           <div
             class="w-full h-auto bg-gray-400 hidden lg:block lg:w-5/12 bg-cover rounded-l-lg"
             style="
+              height: 600px;
               background-image: url('https://source.unsplash.com/Mv9hjnEUHR4/600x800');
             "
           ></div>
           <!-- Col -->
-          <div class="w-full lg:w-7/12 bg-white p-5 rounded-r-lg">
-            <h3 class="pt-4 text-2xl text-center">Create an Account!</h3>
+          <div
+            class="w-full lg:w-7/12 bg-white p-5 rounded-r-lg flex flex-col items-center justify-center"
+          >
+            <h3 class="pt-4 text-2xl text-center">JOIN EVENTY</h3>
             <div class="container mx-auto">
               <div class="grid m-4">
                 <ValidationObserver ref="observer" v-slot="{ invalid }">
@@ -63,6 +66,11 @@
                         submit
                       </v-btn>
                       <v-btn @click="clear"> clear </v-btn>
+                    </div>
+                    <div class="mt-8">
+                      <nuxt-link to="/auth/signin"
+                        >Already have an account? Login</nuxt-link
+                      >
                     </div>
                   </form>
                 </ValidationObserver>
