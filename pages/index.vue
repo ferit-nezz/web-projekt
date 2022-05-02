@@ -1,6 +1,9 @@
 <template>
   <div>
     <Hero />
+    <TextImageLeft />
+    <TextImageRight />
+    <Footer />
   </div>
 </template>
 
