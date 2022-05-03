@@ -1,6 +1,8 @@
 <template>
-  <div>
-    <Hero variant="small" />
+  <div class="container">
+    <EventTitleDescription />
+    <EventDescription />
+    <EventButtonJoin />
   </div>
 </template>
 
