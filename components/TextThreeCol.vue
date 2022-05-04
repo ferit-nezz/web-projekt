@@ -6,34 +6,64 @@
       <div class="flex justify-center px-6 my-12">
         <div class="w-full xl:w-3/4 lg:w-11/12 flex rounded-lg">
           <div class="w-full lg:w-7/12 bg-white p-5 rounded-l-lg">
-            <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:gap-20">
-              <div>
+            <div class="grid border-solid border-2 border-yellow-300 rounded-xl">
+                 
+                 <v-img class="bg-yellow-200 rounded-xl"
+                  src="trophy-outline.svg"
+                ></v-img>
                 <p
-                  class="mt-6 sm:mt-8 font-pangram-regular ptext-small text-text prose"
+                  class="
+                    mt-6
+                    sm:mt-8
+                    font-pangram-regular
+                    ptext-small
+                    text-text
+                    prose
+                    text-center
+                  "
                 >
-                  new text
+                  The best app for making events
                 </p>
-              </div>
             </div>
           </div>
           <div class="w-full lg:w-7/12 bg-white p-5">
-            <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:gap-20">
-              <div>
+            <div class="grid border-solid border-2 border-blue-300 rounded-xl">
+                <v-img class="bg-blue-300 rounded-xl"
+                  src="account-group.svg"
+                ></v-img>
                 <p
-                  class="mt-6 sm:mt-8 font-pangram-regular ptext-small text-text prose"
+                  class="
+                    mt-6
+                    sm:mt-8
+                    font-pangram-regular
+                    ptext-small
+                    text-text
+                    prose
+                    text-center
+                  "
                 >
-                  new text
+                  Interact with people
                 </p>
-              </div>
             </div>
           </div>
           <div class="w-full lg:w-7/12 bg-white p-5 rounded-r-lg">
-            <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:gap-20">
+            <div class="grid border-solid border-2 border-blue-300 rounded-xl">
               <div>
+                <v-img class="bg-green-200 rounded-xl"
+                  src="coffee-outline.svg"
+                ></v-img>
                 <p
-                  class="mt-6 sm:mt-8 font-pangram-regular ptext-small text-text prose"
+                  class="
+                    mt-6
+                    sm:mt-8
+                    font-pangram-regular
+                    ptext-small
+                    text-text
+                    prose
+                    text-center
+                  "
                 >
-                  new text
+                  Easy to use 
                 </p>
               </div>
             </div>
