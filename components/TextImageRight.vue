@@ -13,16 +13,31 @@
               <div>
                 <div>
                   <p
-                    class="mt-6 sm:mt-8 font-pangram-regular ptext-small text-text prose"
+                    class="
+                      mt-6
+                      sm:mt-8
+                      font-pangram-regular
+                      ptext-small
+                      text-text
+                      prose
+                    "
                   >
-                    details
+                    Login to create new events and join created events.
                   </p>
                 </div>
               </div>
             </div>
           </div>
           <div
-            class="w-full h-auto bg-gray-400 hidden lg:block lg:w-5/12 bg-cover rounded-r-lg"
+            class="
+              w-full
+              h-auto
+              bg-gray-400
+              hidden
+              lg:block lg:w-5/12
+              bg-cover
+              rounded-r-lg
+            "
             style="
               background-image: url('https://source.unsplash.com/Mv9hjnEUHR4/600x800');
             "

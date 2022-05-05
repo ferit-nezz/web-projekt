@@ -7,7 +7,15 @@
         <div class="w-full xl:w-3/4 lg:w-11/12 flex rounded-lg">
           <!-- Col -->
           <div
-            class="w-full h-auto bg-gray-400 hidden lg:block lg:w-5/12 bg-cover rounded-l-lg"
+            class="
+              w-full
+              h-auto
+              bg-gray-400
+              hidden
+              lg:block lg:w-5/12
+              bg-cover
+              rounded-l-lg
+            "
             style="
               background-image: url('https://source.unsplash.com/Mv9hjnEUHR4/600x800');
             "
@@ -18,9 +26,16 @@
               <div>
                 <div>
                   <p
-                    class="mt-6 sm:mt-8 font-pangram-regular ptext-small text-text prose"
+                    class="
+                      mt-6
+                      sm:mt-8
+                      font-pangram-regular
+                      ptext-small
+                      text-text
+                      prose
+                    "
                   >
-                    details
+                    Preview events and see details about them.
                   </p>
                 </div>
               </div>
