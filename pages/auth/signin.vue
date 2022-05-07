@@ -1,8 +1,11 @@
 <template>
-  <div class="bg-gray-200 h-screen flex items-center">
+  <div class="bg-gray-200 h-screen flex flex-col items-center">
     <!-- Container -->
-    <div class="w-1/2 mx-auto">
-      <div class="flex justify-center px-6 my-12">
+    <div class="mt-8 w-2/5 mx-auto">
+      <nuxt-link to="/">Return to homepage</nuxt-link>
+    </div>
+    <div class="w-2/5 mx-auto">
+      <div class="flex justify-center my-12">
         <!-- Row -->
         <div class="flex rounded-lg">
           <!-- Col -->
@@ -23,6 +26,7 @@
                         v-model="email"
                         :error-messages="errors"
                         label="E-mail"
+                        outlined
                         required
                       ></v-text-field>
                     </ValidationProvider>
@@ -36,6 +40,8 @@
                         v-model="password"
                         :error-messages="errors"
                         label="Password"
+                        type="password"
+                        outlined
                         required
                       ></v-text-field>
                     </ValidationProvider>
@@ -43,7 +49,11 @@
                       <v-btn class="mr-4" type="submit" :disabled="invalid">
                         submit
                       </v-btn>
-                      <v-btn @click="clear"> clear </v-btn>
+                    </div>
+                    <div class="mt-8">
+                      <nuxt-link to="/auth/signup"
+                        >Not a user? Signup</nuxt-link
+                      >
                     </div>
                   </form>
                 </ValidationObserver>
@@ -76,14 +86,6 @@ export default {
   methods: {
     submit() {
       this.$refs.observer.validate();
-    },
-    clear() {
-      this.name = "";
-      this.password = "";
-      this.email = "";
-      this.select = null;
-      this.checkbox = null;
-      this.$refs.observer.reset();
     },
   },
 };
