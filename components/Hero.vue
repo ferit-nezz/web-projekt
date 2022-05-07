@@ -8,7 +8,12 @@
       :class="{ 'h-96': variant == 'main', 'h-64': variant == 'small' }"
       src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg"
     ></v-img>
-    <p class="z-20 absolute text-white text-3xl">{{ title }}</p>
+    <p class="z-20 absolute text-white text-8xl" style="font-family: billabong">
+      {{ title }}
+    </p>
+    <p class="z-20 absolute text-white text-xl bottom-20">
+      Event based platform
+    </p>
   </div>
 </template>
 

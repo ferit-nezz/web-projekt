@@ -1,0 +1,5 @@
+@font-face {
+    font-family: "billabong";
+    src: local("billabong"),
+     url(~assets/billabong.ttf) format("truetype");
+}

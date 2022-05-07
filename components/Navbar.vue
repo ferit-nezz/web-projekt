@@ -2,7 +2,10 @@
   <div class="bg-black text-white h-16">
     <div class="w-full h-full flex justify-between items-center px-4">
       <nuxt-link to="/">
-        <p class="text-3xl text-white" style="margin-bottom: 0px !important">
+        <p
+          class="text-5xl text-white"
+          style="margin-bottom: 0px !important; font-family: billabong"
+        >
           Eventy
         </p></nuxt-link
       >
