@@ -1,13 +1,43 @@
 <template>
   <div class="container">
-    <EventTitleDescription />
-    <EventDescription />
-    <EventButtonJoin />
+    <div class="relative flex items-center h-64">
+      <v-img
+        class="absolute z-10 h-64"
+        src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg"
+      ></v-img>
+      <p class="z-20 ml-12 absolute text-white text-5xl">
+        {{ title }}
+      </p>
+    </div>
+    <div class="px-24 my-12 grid gap-4">
+      <p>
+        This is event description...Lorem Ipsum is simply dummy text of the
+        printing and typesetting industry. Lorem Ipsum has been the industry's
+        standard dummy text ever since the 1500s, when an unknown printer took a
+        galley of type and scrambled it to make a type specimen book. It has
+        survived not only five centuries, but also the leap into electronic
+        typesetting, remaining essentially unchanged. It was popularised in the
+        1960s with the release of Letraset sheets containing Lorem Ipsum
+        passages, and more recently with desktop publishing software like Aldus
+        PageMaker including versions of Lorem Ipsum.
+      </p>
+      <p>Event time: 2.5.2022.</p>
+      <p>Location: Osijek, FERIT</p>
+      <p>Number of users: 55</p>
+      <p>Author name: Johntra Wolta</p>
+      <v-btn> Join </v-btn>
+    </div>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      title: "bok",
+    };
+  },
+};
 </script>
 
 <style></style>
