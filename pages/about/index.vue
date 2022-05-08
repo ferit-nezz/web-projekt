@@ -35,6 +35,7 @@
         type="wide"
         text="FERIT student"
         title="Stjepan Kekelić"
+        imageUrl="stjepan_profilna.jpg"
       />
     </div>
   </div>
