@@ -9,15 +9,7 @@
         <div class="flex rounded-lg">
           <!-- Col -->
           <div
-            class="
-              lg:w-7/12
-              bg-white
-              p-5
-              rounded-lg
-              flex flex-col
-              items-center
-              justify-center
-            "
+            class="lg:w-7/12 bg-white p-5 rounded-lg flex flex-col items-center justify-center"
           >
             <h3 class="pt-4 text-4xl text-center font-bold">CREATE AN EVENT</h3>
             <div class="container mx-auto">
@@ -102,7 +94,7 @@ export default {
     password: "",
     email: "",
     select: null,
-    items: ["Sport", "Party", "Musical", "Trade Shows", "Conferences"],
+    items: ["Sport", "Party", "Musical", "Trade Show", "Conference"],
     checkbox: null,
     picker: new Date(Date.now() - new Date().getTimezoneOffset() * 60000)
       .toISOString()
