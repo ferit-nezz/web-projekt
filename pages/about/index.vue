@@ -6,20 +6,17 @@
         <p
           class="mt-6 sm:mt-8 font-pangram-regular ptext-small text-text prose"
         >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a odio
-          quis justo efficitur dictum. Nunc sit amet porta sapien, eu euismod
-          massa. Pellentesque habitant morbi tristique senectus et netus et
-          malesuada fames ac turpis egestas. Suspendisse eget eros a lorem
-          euismod gravida. In quis malesuada libero, quis porttitor felis.
+          This project is inspired by the idea that you can inform other people
+          about a created event. The idea is that the user has the ability to
+          view events created by other users. The user creating the event must
+          enter the necessary information about the event so that those who want
+          to visit the event have all the information about it.
         </p>
         <p
           class="mt-6 sm:mt-8 font-pangram-regular ptext-small text-text prose"
         >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a odio
-          quis justo efficitur dictum. Nunc sit amet porta sapien, eu euismod
-          massa. Pellentesque habitant morbi tristique senectus et netus et
-          malesuada fames ac turpis egestas. Suspendisse eget eros a lorem
-          euismod gravida. In quis malesuada libero, quis porttitor felis.
+          If you have any problems or suggestions for improving the project you
+          can contact us at any time.
         </p>
       </div>
     </div>
@@ -35,6 +32,7 @@
         type="wide"
         text="FERIT student"
         title="Stjepan Kekelić"
+        imageUrl="stjepan_profilna.jpg"
       />
     </div>
   </div>
