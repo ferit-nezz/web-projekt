@@ -104,8 +104,16 @@ export default {
   }),
 
   methods: {
-    submit() {
+    async submit() {
       this.$refs.observer.validate();
+
+      const res = await $axios.post("/auth/signup", {
+        name: this.name,
+        email: this.email,
+        password: this.password,
+      });
+
+      console.log(res);
     },
     clear() {
       this.name = "";
