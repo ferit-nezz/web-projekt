@@ -6,12 +6,14 @@
     </div>
     <div class="container flex justify-center">
       <!-- Row -->
-      <div class="w-full xl:w-3/4 lg:w-11/12 flex rounded-lg">
+      <div
+        class="w-full xl:w-3/4 lg:w-11/12 flex rounded-lg"
+        style="height: 600px"
+      >
         <!-- Col -->
         <div
           class="w-full h-auto bg-gray-400 hidden lg:block lg:w-5/12 bg-cover rounded-l-lg"
           style="
-            height: 600px;
             background-image: url('https://source.unsplash.com/Mv9hjnEUHR4/600x800');
           "
         ></div>
@@ -26,14 +28,14 @@
                 <form @submit.prevent="submit">
                   <ValidationProvider
                     v-slot="{ errors }"
-                    name="Name"
+                    name="Username"
                     rules="required"
                   >
                     <v-text-field
-                      v-model="name"
+                      v-model="username"
                       :counter="10"
                       :error-messages="errors"
-                      label="Name"
+                      label="Username"
                       outlined
                       required
                     ></v-text-field>
@@ -88,6 +90,8 @@
 
 <script>
 import { ValidationObserver, ValidationProvider } from "vee-validate";
+import { mapMutations } from "vuex";
+
 export default {
   components: {
     ValidationObserver: ValidationObserver,
@@ -95,7 +99,7 @@ export default {
   },
   layout: "auth",
   data: () => ({
-    name: "",
+    username: "",
     password: "",
     email: "",
     select: null,
@@ -107,16 +111,23 @@ export default {
     async submit() {
       this.$refs.observer.validate();
 
-      const res = await $axios.post("/auth/signup", {
-        name: this.name,
+      const res = await this.$axios.post("/auth/signup", {
+        username: this.username,
         email: this.email,
         password: this.password,
       });
 
-      console.log(res);
+      console.log(res.data);
+
+      this.$store.commit("user/addUser", res.data.user);
+      this.$store.commit("user/addToken", res.data.token.access_token);
+
+      if (res.data.token) {
+        this.$router.push("/events");
+      }
     },
     clear() {
-      this.name = "";
+      this.username = "";
       this.password = "";
       this.email = "";
       this.select = null;

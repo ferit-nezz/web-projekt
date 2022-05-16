@@ -87,12 +87,19 @@ export default {
     async submit() {
       this.$refs.observer.validate();
 
-      const res = await $axios.post("/auth/signin", {
+      const res = await this.$axios.post("/auth/signin", {
         email: this.email,
         password: this.password,
       });
 
       console.log(res);
+
+      this.$store.commit("user/addUser", res.data.user);
+      this.$store.commit("user/addToken", res.data.token.access_token);
+
+      if (res.data.token) {
+        this.$router.push("/events");
+      }
     },
   },
 };
