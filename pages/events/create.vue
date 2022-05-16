@@ -1,123 +1,118 @@
 <template>
-  <div class="flex items-center justify-center">
-    <form class="w-full max-w-lg">
-      <div class="flex flex-wrap -mx-3 mb-6">
-        <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-          <label
-            class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-            for="grid-first-name"
+  <div>
+    <div class="mt-8 w-1/2 lg:w-2/5 mx-auto">
+      <nuxt-link to="/">Return to homepage</nuxt-link>
+    </div>
+    <div class="lg:w-2/5 mx-auto">
+      <div class="flex justify-center my-12">
+        <!-- Row -->
+        <div class="flex rounded-lg">
+          <!-- Col -->
+          <div
+            class="lg:w-7/12 bg-white p-5 rounded-lg flex flex-col items-center justify-center"
           >
-            First Name
-          </label>
-          <input
-            class="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-            id="grid-first-name"
-            type="text"
-            placeholder="Jane"
-          />
-          <p class="text-red-500 text-xs italic">Please fill out this field.</p>
-        </div>
-        <div class="w-full md:w-1/2 px-3">
-          <label
-            class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-            for="grid-last-name"
-          >
-            Last Name
-          </label>
-          <input
-            class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-            id="grid-last-name"
-            type="text"
-            placeholder="Doe"
-          />
-        </div>
-      </div>
-      <div class="flex flex-wrap -mx-3 mb-6">
-        <div class="w-full px-3">
-          <label
-            class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-            for="grid-password"
-          >
-            Password
-          </label>
-          <input
-            class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-            id="grid-password"
-            type="password"
-            placeholder="******************"
-          />
-          <p class="text-gray-600 text-xs italic">
-            Make it as long and as crazy as you'd like
-          </p>
-        </div>
-      </div>
-      <div class="flex flex-wrap -mx-3 mb-2">
-        <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-          <label
-            class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-            for="grid-city"
-          >
-            City
-          </label>
-          <input
-            class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-            id="grid-city"
-            type="text"
-            placeholder="Albuquerque"
-          />
-        </div>
-        <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-          <label
-            class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-            for="grid-state"
-          >
-            State
-          </label>
-          <div class="relative">
-            <select
-              class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-              id="grid-state"
-            >
-              <option>New Mexico</option>
-              <option>Missouri</option>
-              <option>Texas</option>
-            </select>
-            <div
-              class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700"
-            >
-              <svg
-                class="fill-current h-4 w-4"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
-                />
-              </svg>
+            <h3 class="pt-4 text-4xl text-center font-bold">CREATE AN EVENT</h3>
+            <div class="container mx-auto">
+              <div class="grid m-4 gap-8">
+                <ValidationObserver ref="observer" v-slot="{ invalid }">
+                  <form @submit.prevent="submit">
+                    <ValidationProvider
+                      v-slot="{ errors }"
+                      name="title"
+                      rules="required"
+                    >
+                      <v-text-field
+                        v-model="title"
+                        :error-messages="errors"
+                        label="Title"
+                        outlined
+                        required
+                      ></v-text-field>
+                    </ValidationProvider>
+
+                    <ValidationProvider
+                      v-slot="{ errors }"
+                      name="description"
+                      rules="required"
+                    >
+                      <v-textarea
+                        v-model="description"
+                        :error-messages="errors"
+                        label="Description"
+                        outlined
+                        required
+                      ></v-textarea>
+                    </ValidationProvider>
+                    <DatePicker />
+                    <TimePicker />
+                    <v-select
+                      :items="items"
+                      label="Event type"
+                      outlined
+                    ></v-select>
+                    <ValidationProvider
+                      v-slot="{ errors }"
+                      name="location"
+                      rules="required"
+                    >
+                      <v-text-field
+                        v-model="location"
+                        :error-messages="errors"
+                        label="Location"
+                        outlined
+                        required
+                      ></v-text-field>
+                    </ValidationProvider>
+
+                    <div class="mt-8">
+                      <v-btn class="mr-4" type="submit" :disabled="invalid">
+                        submit
+                      </v-btn>
+                    </div>
+                  </form>
+                </ValidationObserver>
+              </div>
             </div>
           </div>
         </div>
-        <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-          <label
-            class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-            for="grid-zip"
-          >
-            Zip
-          </label>
-          <input
-            class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-            id="grid-zip"
-            type="text"
-            placeholder="90210"
-          />
-        </div>
       </div>
-    </form>
+    </div>
   </div>
 </template>
 
 <script>
-export default {};
+import { ValidationObserver, ValidationProvider } from "vee-validate";
+export default {
+  components: {
+    ValidationObserver: ValidationObserver,
+    ValidationProvider: ValidationProvider,
+  },
+  layout: "auth",
+  data: () => ({
+    description: "",
+    title: "",
+    password: "",
+    email: "",
+    select: null,
+    items: ["Sport", "Party", "Musical", "Trade Show", "Conference"],
+    checkbox: null,
+    picker: new Date(Date.now() - new Date().getTimezoneOffset() * 60000)
+      .toISOString()
+      .substr(0, 10),
+    location: "",
+  }),
+
+  methods: {
+    submit() {
+      this.$refs.observer.validate();
+    },
+  },
+  watch: {
+    menu(val) {
+      val && setTimeout(() => (this.activePicker = "YEAR"));
+    },
+  },
+};
 </script>
 
 <style></style>
