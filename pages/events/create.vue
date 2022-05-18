@@ -43,10 +43,11 @@
                         required
                       ></v-textarea>
                     </ValidationProvider>
-                    <DatePicker />
-                    <TimePicker />
+                    <DatePicker @input="(e) => (date = e)" />
+                    <TimePicker @input="(e) => (time = e)" />
                     <v-select
                       :items="items"
+                      v-model="type"
                       label="Event type"
                       outlined
                     ></v-select>
@@ -82,6 +83,7 @@
 
 <script>
 import { ValidationObserver, ValidationProvider } from "vee-validate";
+import { mapState } from "vuex";
 export default {
   components: {
     ValidationObserver: ValidationObserver,
@@ -91,20 +93,44 @@ export default {
   data: () => ({
     description: "",
     title: "",
-    password: "",
-    email: "",
-    select: null,
+    time: "",
+    date: "",
+    type: "",
     items: ["Sport", "Party", "Musical", "Trade Show", "Conference"],
-    checkbox: null,
-    picker: new Date(Date.now() - new Date().getTimezoneOffset() * 60000)
-      .toISOString()
-      .substr(0, 10),
     location: "",
   }),
 
+  computed: {
+    ...mapState({
+      user: (state) => state.user.user,
+      token: (state) => state.user.token,
+    }),
+  },
+
   methods: {
-    submit() {
+    async submit() {
       this.$refs.observer.validate();
+
+      const req = {
+        title: this.title,
+        description: this.description,
+        location: this.location,
+        type: this.type,
+        date: this.date,
+        time: this.time,
+        userId: this.user.id,
+      };
+
+      console.log(req);
+
+      const res = await this.$axios.post("/event/create", req, {
+        headers: {
+          Authorization: `Bearer ${this.token}`,
+        },
+      });
+
+      console.log(res);
+      this.$router.push("/events");
     },
   },
   watch: {

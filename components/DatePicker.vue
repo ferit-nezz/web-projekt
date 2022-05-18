@@ -40,6 +40,13 @@ export default {
       this.$refs.menu.save(date);
     },
   },
+  watch: {
+    date: {
+      handler() {
+        this.$emit("input", this.date);
+      },
+    },
+  },
 };
 </script>
 

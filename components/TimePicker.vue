@@ -38,6 +38,13 @@ export default {
       modal2: false,
     };
   },
+  watch: {
+    time: {
+      handler() {
+        this.$emit("input", this.time);
+      },
+    },
+  },
 };
 </script>
 
