@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-gray-200 flex justify-center py-8 min-h-screen">
+  <div class="bg-gray-200 flex justify-center py-8">
     <div v-if="events.lenght == 0" class="max-w-6xl grid lg:grid-cols-2 gap-8">
       <v-card
         v-for="(event, index) in events"
@@ -25,9 +25,7 @@
         </v-card-actions>
       </v-card>
     </div>
-    <div v-else class="flex justify-center items-center">
-      No events to show..
-    </div>
+    <div v-else>No events to show..</div>
   </div>
 </template>
 

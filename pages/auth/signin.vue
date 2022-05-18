@@ -4,7 +4,7 @@
     <div class="mt-8 w-2/5 mx-auto">
       <nuxt-link to="/">Return to homepage</nuxt-link>
     </div>
-    <div class="w-2/5 mx-auto">
+    <div class="md:w-2/5 mx-auto">
       <div class="flex justify-center my-12">
         <!-- Row -->
         <div class="flex rounded-lg">

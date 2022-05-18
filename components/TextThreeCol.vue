@@ -3,7 +3,7 @@
     <!-- Container -->
 
     <div class="container mt-20">
-      <div class="grid grid-cols-3 gap-20">
+      <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-20">
         <v-card
           hover
           class="grid border-solid p-12 border-2 border-yellow-300 rounded-xl"

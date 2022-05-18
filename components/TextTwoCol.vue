@@ -2,7 +2,7 @@
   <div class="bg-gray-200 flex flex-col">
     <!-- Container -->
 
-    <div class="container mt-20 grid grid-cols-2 gap-20">
+    <div class="container mt-20 grid sm:grid-cols-2 gap-20">
       <div class="bg-white p-12 rounded-lg">
         <p
           class="mt-6 sm:mt-8 font-pangram-regular ptext-small text-text prose"
