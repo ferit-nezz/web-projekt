@@ -18,8 +18,16 @@
         Eventy
       </p>
 
-      <div class="grid grid-cols-3 gap-8">
-        <v-btn plain color="white" to="/events"> Events </v-btn>
+      <div class="grid grid-cols-5 gap-8">
+        <v-btn v-if="token" plain color="white" to="/my-events">
+          My events
+        </v-btn>
+        <div v-else />
+        <v-btn v-if="token" plain color="white" to="/joined-events">
+          Joined events
+        </v-btn>
+        <div v-else />
+        <v-btn plain color="white" to="/all-events"> All events </v-btn>
         <v-btn plain color="white" to="/about"> About </v-btn>
         <v-btn v-if="!token" depressed to="/auth/signin"> Log in </v-btn>
         <v-btn v-else depressed @click="logOut"> Log out </v-btn>

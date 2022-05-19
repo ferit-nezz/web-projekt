@@ -16,7 +16,10 @@
       <p v-if="event.date">Event date: {{ event.date }}.</p>
       <p v-if="event.time">Event time: {{ event.time }}.</p>
       <p v-if="event.location">Location: {{ event.location }}</p>
-      <p v-if="author">Organizer: {{ author.username }}</p>
+      <div v-if="author">
+        Creator:
+        <p class="font-bold">{{ author.username }}</p>
+      </div>
       <v-btn v-if="token" @click="joinEvent"> Join </v-btn>
     </div>
   </div>

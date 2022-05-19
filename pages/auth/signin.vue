@@ -96,7 +96,7 @@ export default {
       this.$store.commit("user/addToken", res.data.token.access_token);
 
       if (res.data.token) {
-        this.$router.push("/events");
+        this.$router.push("/all-events");
       }
     },
   },
