@@ -121,15 +121,12 @@ export default {
         userId: this.user.id,
       };
 
-      console.log(req);
-
       const res = await this.$axios.post("/event/create", req, {
         headers: {
           Authorization: `Bearer ${this.token}`,
         },
       });
 
-      console.log(res);
       this.$router.push("/events");
     },
   },

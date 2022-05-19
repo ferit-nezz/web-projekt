@@ -17,12 +17,13 @@
       <p v-if="event.time">Event time: {{ event.time }}.</p>
       <p v-if="event.location">Location: {{ event.location }}</p>
       <p v-if="author">Organizer: {{ author.username }}</p>
-      <v-btn> Join </v-btn>
+      <v-btn v-if="token" @click="joinEvent"> Join </v-btn>
     </div>
   </div>
 </template>
 
 <script>
+import { mapState } from "vuex";
 export default {
   name: "SingleEvent",
   data() {
@@ -35,6 +36,31 @@ export default {
 
     const author = await $axios.get(`user/${event.data.id}`);
     return { event: event.data, author: author.data };
+  },
+
+  computed: {
+    ...mapState({
+      user: (state) => state.user.user,
+      token: (state) => state.user.token,
+    }),
+  },
+
+  methods: {
+    async joinEvent() {
+      const res = await this.$axios.post(
+        "event/join",
+        {
+          userId: this.user.id,
+          eventId: this.event.id,
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${this.token}`,
+          },
+        }
+      );
+      console.log(res);
+    },
   },
 };
 </script>

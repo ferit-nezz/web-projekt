@@ -117,8 +117,6 @@ export default {
         password: this.password,
       });
 
-      console.log(res.data);
-
       this.$store.commit("user/addUser", res.data.user);
       this.$store.commit("user/addToken", res.data.token.access_token);
 
