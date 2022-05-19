@@ -27,6 +27,7 @@ export default {
   plugins: [
     { src: "~/plugins/vuetify.js", mode: "client" },
     "~/plugins/vee-validate.js",
+    { src: "~/plugins/persistedState.client.js" },
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
