@@ -7,17 +7,9 @@
 <script>
 export default {
   async asyncData({ $axios, store }) {
-    const events = await $axios.get(
-      "/event/my",
-      {
-        userId: store.state.user.user.id,
-      },
-      {
-        headers: {
-          Authorization: `Bearer ${store.state.user.token}`,
-        },
-      }
-    );
+    const events = await $axios.get("/event/my", {
+      userId: store.state.user.user.id,
+    });
     return { events: events.data };
   },
 };
