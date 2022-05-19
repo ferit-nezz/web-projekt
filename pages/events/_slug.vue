@@ -16,8 +16,7 @@
       <p v-if="event.date">Event date: {{ event.date }}.</p>
       <p v-if="event.time">Event time: {{ event.time }}.</p>
       <p v-if="event.location">Location: {{ event.location }}</p>
-      <!-- <p>Number of users: 55</p> -->
-      <p>Author name: Johntra Wolta</p>
+      <p v-if="author">Organizer: {{ author.username }}</p>
       <v-btn> Join </v-btn>
     </div>
   </div>
@@ -25,24 +24,17 @@
 
 <script>
 export default {
+  name: "SingleEvent",
   data() {
     return {
       title: "bok",
     };
   },
-  async asyncData({ $axios }) {
-    const event = await $axios.get("/event", {
-      params: {
-        id: this.$route.params.id,
-      },
-    });
+  async asyncData({ $axios, params }) {
+    const event = await $axios.get(`event/${params.slug}`);
 
-    /* const author = await $axios.get("/user", {
-      params: {
-        id: event.data.authorId,
-      },
-    }); */
-    return { event: event.data };
+    const author = await $axios.get(`user/${event.data.id}`);
+    return { event: event.data, author: author.data };
   },
 };
 </script>

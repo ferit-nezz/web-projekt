@@ -1,6 +1,6 @@
 <template>
   <div class="bg-gray-200 flex justify-center py-8">
-    <div v-if="events.lenght == 0" class="max-w-6xl grid lg:grid-cols-2 gap-8">
+    <div v-if="events" class="max-w-6xl grid lg:grid-cols-2 gap-8">
       <v-card
         v-for="(event, index) in events"
         :key="index"
@@ -17,7 +17,7 @@
         <v-card-subtitle> {{ event.description }} </v-card-subtitle>
 
         <v-card-actions>
-          <v-btn color="orange lighten-2" text nuxt to="events/3">
+          <v-btn color="orange lighten-2" text nuxt :to="`events/${event.id}`">
             Explore
           </v-btn>
 
