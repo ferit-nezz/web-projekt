@@ -34,8 +34,15 @@ export default {
       title: "bok",
     };
   },
-  async asyncData({ $axios, params }) {
+  async asyncData({ $axios, params, store }) {
     const event = await $axios.get(`event/${params.slug}`);
+
+    /*  const isUserJoined = await $axios.get("event/is-joined", {
+      userId: store.state.user.user.id,
+      eventId: event.data.id,
+    });
+
+    console.log(isUserJoined); */
 
     const author = await $axios.get(`user/${event.data.id}`);
     return { event: event.data, author: author.data };
