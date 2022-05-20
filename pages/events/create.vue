@@ -127,7 +127,7 @@ export default {
         },
       });
 
-      this.$router.push("/events");
+      this.$router.push("/all-events");
     },
   },
   watch: {

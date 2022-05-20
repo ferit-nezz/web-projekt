@@ -7,7 +7,6 @@
 <script>
 export default {
   async asyncData({ $axios, store }) {
-    console.log(store.state.user.token);
     const events = await $axios.get("/event/joined", {
       userId: store.state.user.user.id,
     });
