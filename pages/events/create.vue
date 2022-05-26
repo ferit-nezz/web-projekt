@@ -9,7 +9,15 @@
         <div class="flex rounded-lg">
           <!-- Col -->
           <div
-            class="lg:w-7/12 bg-white p-5 rounded-lg flex flex-col items-center justify-center"
+            class="
+              lg:w-7/12
+              bg-white
+              p-5
+              rounded-lg
+              flex flex-col
+              items-center
+              justify-center
+            "
           >
             <h3 class="pt-4 text-4xl text-center font-bold">CREATE AN EVENT</h3>
             <div class="container mx-auto">
@@ -93,9 +101,9 @@ export default {
   data: () => ({
     description: "",
     title: "",
-    time: "",
-    date: "",
-    type: "",
+    time: "Default",
+    date: "Default",
+    type: "Default",
     items: ["Sport", "Party", "Musical", "Trade Show", "Conference"],
     location: "",
   }),
