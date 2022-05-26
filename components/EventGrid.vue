@@ -8,7 +8,7 @@
         max-width="500"
       >
         <v-img
-          src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg"
+          v-bind:src="require(`../static/${getImgSrc(event.type)}`)"
           height="200px"
         ></v-img>
 
@@ -34,6 +34,16 @@ export default {
   props: {
     events: Array,
     default: () => [],
+  },
+  methods: {
+    getImgSrc(type) {
+      if (type == "Sport") return "sport_event.jpg";
+      else if (type == "Party") return "party_event.jpg";
+      else if (type == "Musical") return "musical_event.jpg";
+      else if (type == "Trade Show") return "trade_show_event.jpg";
+      else if (type == "Conference") return "conference_event.jpg";
+      else return "default_event.jpg";
+    },
   },
 };
 </script>
