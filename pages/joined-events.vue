@@ -7,9 +7,9 @@
 <script>
 export default {
   async asyncData({ $axios, store }) {
-    const events = await $axios.get("/event/joined", {
-      userId: store.state.user.user.id,
-    });
+    const events = await $axios.get(
+      `/event/joined/${store.state.user.user.id}`
+    );
     return { events: events.data };
   },
 };
