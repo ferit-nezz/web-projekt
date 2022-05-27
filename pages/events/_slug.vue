@@ -20,7 +20,10 @@
         Creator:
         <p class="font-bold">{{ author.username }}</p>
       </div>
-      <v-btn v-if="token" @click="joinEvent"> Join </v-btn>
+      <div v-if="token">
+        <v-btn v-if="!isUserJoined" @click="joinEvent"> Join </v-btn>
+        <v-btn v-else @click="unjoinEvent"> Unjoin </v-btn>
+      </div>
     </div>
   </div>
 </template>
@@ -37,15 +40,18 @@ export default {
   async asyncData({ $axios, params, store }) {
     const event = await $axios.get(`event/${params.slug}`);
 
-    /*  const isUserJoined = await $axios.get("event/is-joined", {
-      userId: store.state.user.user.id,
-      eventId: event.data.id,
-    });
+    const isUserJoined = await $axios.get(
+      `event/is-joined/${store.state.user.user.id}/${event.data.id}`
+    );
 
-    console.log(isUserJoined); */
+    console.log(isUserJoined);
 
     const author = await $axios.get(`user/${event.data.id}`);
-    return { event: event.data, author: author.data };
+    return {
+      event: event.data,
+      author: author.data,
+      isUserJoined: isUserJoined.data,
+    };
   },
 
   computed: {
@@ -59,6 +65,20 @@ export default {
     async joinEvent() {
       const res = await this.$axios.post(
         "event/join",
+        {
+          userId: this.user.id,
+          eventId: this.event.id,
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${this.token}`,
+          },
+        }
+      );
+    },
+    async unjoinEvent() {
+      const res = await this.$axios.post(
+        "event/unjoin",
         {
           userId: this.user.id,
           eventId: this.event.id,
