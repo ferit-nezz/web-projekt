@@ -37,7 +37,7 @@
     </div>
 
     <div class="md:hidden">
-      <v-app-bar class="bg-black text-white h-16" dark>
+      <v-app-bar class="bg-black text-white h-16" dark color="black">
         <p
           class="text-5xl text-white"
           style="margin-bottom: 0px !important; font-family: billabong"
