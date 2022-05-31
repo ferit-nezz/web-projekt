@@ -35,21 +35,20 @@ export default {
   data() {
     return {
       title: "bok",
+      isUserJoined: null,
     };
   },
   async asyncData({ $axios, params, store }) {
     const event = await $axios.get(`event/${params.slug}`);
 
-    const isUserJoined = await $axios.get(
-      `event/is-joined/${store.state.user.user.id}/${event.data.id}`
-    );
-
     const author = await $axios.get(`user/${event.data.id}`);
     return {
       event: event.data,
       author: author.data,
-      isUserJoined: isUserJoined.data,
     };
+  },
+  mounted() {
+    this.fetchIsUserJoined();
   },
 
   computed: {
@@ -60,6 +59,12 @@ export default {
   },
 
   methods: {
+    async fetchIsUserJoined() {
+      const res = await this.$axios.get(
+        `event/is-joined/${this.user.id}/${this.event.id}`
+      );
+      this.isUserJoined = res.data;
+    },
     async joinEvent() {
       const res = await this.$axios.post(
         "event/join",
@@ -73,6 +78,8 @@ export default {
           },
         }
       );
+
+      this.fetchIsUserJoined();
     },
     async unjoinEvent() {
       const res = await this.$axios.post(
@@ -87,6 +94,7 @@ export default {
           },
         }
       );
+      this.fetchIsUserJoined();
     },
   },
 };
