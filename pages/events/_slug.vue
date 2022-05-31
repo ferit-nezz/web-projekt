@@ -44,8 +44,6 @@ export default {
       `event/is-joined/${store.state.user.user.id}/${event.data.id}`
     );
 
-    console.log(isUserJoined);
-
     const author = await $axios.get(`user/${event.data.id}`);
     return {
       event: event.data,
